@@ -7,10 +7,17 @@ This is a raspi powered collaborative video jukebox to make your next hosted par
 Make sure your pi has these installed : youtube-dl, omxplayer, nodejs
 
 https://www.raspberrypi.org/forums/viewtopic.php?p=97710 ( youtube-dl)
+
+
 "sudo apt-get install omxplayer" (omx-player)
 
+
 wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
+
+
 sudo dpkg -i node_latest_armhf.deb   (nodejs )
+
+
 sudo npm install twitter 	     ( twitter module )
 
 
