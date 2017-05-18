@@ -39,7 +39,7 @@ There always runs a background process from get_songs_http.sh that looks out for
  
 Steps to get it working:  
 
-1) Create a folder in your apache/nginx webserver, copy all of the files into the that folder. Also remove files in php/ to be    put directly under that folder.   
+1) Create a folder in your apache/nginx webserver, copy all of the files into the that folder. Also remove files in php/ and    put them directly under that folder.   
 2) install python dependencies: pygame
 3) make the scripts executable : sudo chmod a+x run.sh (  also with get_songs_http.sh, show_playlist.py )  
 3) open a terminal and run "sudo ./run.sh " to start the script
