@@ -5,14 +5,14 @@ Make sure your pi has these installed : youtube-dl, omxplayer, nodejs, php
 
 End result :
 
- The script when run successfully shows playlist for 10 seconds, plays a song from output folder , tweets about it, and when   
-	done playing shifts it to archive folder. While showing the playlist it shows a QR code which when scanned opens up the  
-	webpage that allows us to input youtube urls for the player to download and add to playlist. There also is included a managers   page which can be used to remove, shift songs in playlist   
+The script when run successfully shows playlist for 10 seconds, plays a song from output folder , tweets about it, and when   
+	done playing shifts it to archive folder. While showing the playlist it shows a QR code which when scanned opens up the 
+	webpage that allows us to input youtube urls for the player to download and add to playlist. There also is included a 	      managers page which can be used to remove, shift songs in playlist   
 
- If we are out of songs it shifts 3 played songs to output folder from archive folder to keep the party going until someone 
+If we are out of songs it shifts 3 played songs to output folder from archive folder to keep the party going until someone 
 	adds a new youtube url to download. 
 	
-	There always runs a background process from get_songs_http.sh that looks out for newly added youtube urls and downloads them 
+There always runs a background process from get_songs_http.sh that looks out for newly added youtube urls and downloads them 
 	using youtube-dl, saves them as name-title, ( name of person who added song to playlist through webpage ) 
 	
 	
