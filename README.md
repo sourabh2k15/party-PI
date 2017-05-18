@@ -2,7 +2,7 @@
 
 note: I have just improvised on the abandoned and old "partytube" project by ethertubes
 
-This is a raspi powered collaborative video jukebox to make your next hosted party standout 
+This is a raspi powered collaborative video jukebox to make your next party standout 
 
 Make sure your pi has these installed : youtube-dl, omxplayer, nodejs
 
