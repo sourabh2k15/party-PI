@@ -1,0 +1,116 @@
+<html>
+<head>
+	<title>Submit your song</title>
+	<script src="jquery.js"></script>
+	<style>
+		body{
+			background:white;
+			background: url("white.jpg");
+			padding:0;
+			margin:0;
+			font-size:100%;
+			box-sizing:border-box;
+			font-family:SEGOE UI, Ubuntu, Roboto;
+		}
+		
+		div.container{
+			width:100%;
+			float:left;
+		}
+		
+		div.container div{
+			width:100%;
+			float:left;
+			text-align:center;
+			margin-bottom:2%;
+		}
+		div.container div div{
+			width:50%;
+			color:black;	
+			text-align:left;
+		}
+		div.container div div span{
+			margin-left:25%;
+		}
+		div.container div div:first-child{
+			width:30%;
+			margin-left:20%;
+		}
+		div.container div div input{ width:80%;}
+		div.img{
+			width:100%;
+		}
+		div.img img{
+			width:15%;
+			border-radius:0%;
+			margin-bottom:2%;
+			margin-top:2%;
+		}
+		input[type='text']{
+			border:none;
+			outline:none;
+			padding:1%;
+			font-size:1em;
+			color:black;
+			border-bottom:1px solid black;
+			background:transparent;
+		}
+		div.container div div.last{ width:100%;}
+		span{
+			padding:2%;
+			cursor:pointer;
+			color:white;
+			background:black;
+		}
+	</style>
+</head>
+<body>
+
+<div class='container'>
+	<div class='img'><img src='party2.png'/></div>
+	<div>
+		<div>Paste the youtube URL: </div>
+		<div><input type="text" id='url' /></div>
+	</div>	
+	<div>
+		<div>Enter your name: </div>
+		<div><input type="text" id='name' /></div>
+	</div>	
+
+	<div>
+		<div class='last'><span id="add">Add to playlist</span></div>
+	</div>
+</div>	
+
+<script>
+	$(document).ready(function(){
+		console.log("app ready!");
+		$("#add").click(function(){
+			console.log("btn clicked!");
+			var name = document.getElementById("name").value;
+			var url = document.getElementById("url").value;
+			name = name.replace(/\s/g,'');
+			console.log(name+" "+url);
+			document.getElementById("add").innerHTML="processing";	
+			$.ajax({
+				type:"POST",
+				url:"save.php",
+				data:{name:name,url:url},
+				success:function(data){
+					console.log(data);
+					document.getElementById("add").innerHTML="Thank you ";
+					setTimeout(function(){
+						document.getElementById("name").value="";
+						document.getElementById("url").value="";	
+						document.getElementById("add").innerHTML="Add to playlist";
+					},1000);
+				},
+				error:function(){
+					console.log("error occurred!");
+				}	
+			});	
+		});
+	});
+</script>
+</body>
+</html>
